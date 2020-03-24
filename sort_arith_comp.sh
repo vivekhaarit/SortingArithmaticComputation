@@ -8,3 +8,8 @@ read -p "A: " a
 read -p "B: " b
 read -p "C: " c
 
+#computing
+echo "A+B*C: "$(($a+$(($b*$c)) ))
+echo "A*B+C: "$(( $(($a*$b))+$c)) 
+
+
