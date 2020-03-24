@@ -12,3 +12,4 @@ read -p "C: " c
 echo "A+B*C: "$(($a+$(($b*$c)) ))
 echo "A*B+C: "$(( $(($a*$b))+$c)) 
 echo "C+A/B: "$(($c+$(($a/$b)) ))
+echo "A%B+C: "$(( $(($a%$b))+$c)) 
