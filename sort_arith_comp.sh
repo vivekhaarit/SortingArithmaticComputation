@@ -46,5 +46,23 @@ do
     done
 done
   
-echo "Array in sorted order :"
+echo "Array in descending order :"
+echo ${expr_ar[@]} 
+
+#sorting the results in ascending order
+for ((i = 0; i<4; i++)) 
+do 
+    for((j=$i; j<4; j++)) 
+    do
+        if ((${expr_ar[$j]} >= ${expr_ar[$(($j+1))]})) 
+        then
+            temp=0;
+            temp=${expr_ar[$j]} 
+            expr_ar[$j]=${expr_ar[$(($j+1))]}   
+            expr_ar[$(($j+1))]=$temp 
+        fi
+    done
+done
+  
+echo "Array in ascending order :"
 echo ${expr_ar[@]} 
