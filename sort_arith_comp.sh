@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash 
 
 echo "welcome to arithemetic computation and sorting program"
 
@@ -27,17 +27,20 @@ expr_ar[1]=${exprression[A*B+C]}
 expr_ar[2]=${exprression[C+A/B]}
 expr_ar[3]=${exprression[A%B+C]}
 
+echo "----------------------------------"
 #sorting the results in descending order
 echo "Array in original order"
 echo ${expr_ar[@]} 
   
-# Performing Bubble sort  
+#Performing Bubble sort 
+#sorting the results in descending order 
 for ((i = 0; i<4; i++)) 
 do 
-    for((j=$i; j<4; j++)) 
+    for((j=0; j<4-$i-1; j++)) 
     do
-        if ((${expr_ar[$j]} <= ${expr_ar[$(($j+1))]})) 
+        if [[ "${expr_ar[$j]}" -le "${expr_ar[$(($j+1))]}" ]]
         then
+            #swap
             temp=0;
             temp=${expr_ar[$j]} 
             expr_ar[$j]=${expr_ar[$(($j+1))]}   
@@ -49,12 +52,13 @@ done
 echo "Array in descending order :"
 echo ${expr_ar[@]} 
 
+#Performing Bubble sort 
 #sorting the results in ascending order
 for ((i = 0; i<4; i++)) 
 do 
-    for((j=$i; j<4; j++)) 
+    for((j=0; j<4-$i-1; j++)) 
     do
-        if ((${expr_ar[$j]} >= ${expr_ar[$(($j+1))]})) 
+        if [[ "${expr_ar[$j]}" -ge "${expr_ar[$(($j+1))]}" ]]
         then
             temp=0;
             temp=${expr_ar[$j]} 
@@ -66,3 +70,11 @@ done
   
 echo "Array in ascending order :"
 echo ${expr_ar[@]} 
+
+
+
+
+
+
+
+
